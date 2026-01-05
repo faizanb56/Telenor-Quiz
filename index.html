@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faizan Telenor Quiz Web</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #050b14;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-gradient-animate {
+            background: linear-gradient(-45deg, #0f172a, #1e3a8a, #000000, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .main-heading {
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        /* Pulse Animation for Click Here text */
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.98); }
+        }
+        .animate-subtle-pulse {
+            animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Hover Glow Effect */
+        .glow-on-hover:hover {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
+            border-color: rgba(6, 182, 212, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between py-6">
+
+    <!-- Animated Background Div -->
+    <div class="bg-gradient-animate"></div>
+
+    <!-- HEADER SECTION -->
+    <header class="w-full text-center mt-4 md:mt-8 z-10 px-4">
+        <h1 class="main-heading text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wider">
+            FAIZAN TELENOR <br class="md:hidden" /> QUIZ WEB
+        </h1>
+        <div class="h-1 w-24 bg-blue-500 mx-auto mt-3 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
+    </header>
+
+    <!-- MAIN CONTENT (CENTERED) -->
+    <main class="flex-grow flex flex-col items-center justify-center w-full px-4 z-10 relative">
+        
+        <!-- Decoration Circles -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-600/20 rounded-full blur-[80px] -z-10 pointer-events-none"></div>
+
+        <!-- CLICKABLE CARD -->
+        <a href="https://telequiztoday.pk" target="_blank" class="w-full max-w-md group transition-all duration-300 transform hover:-translate-y-1">
+            <div class="glass-card glow-on-hover rounded-2xl p-8 md:p-10 text-center border-t border-white/10 relative overflow-hidden">
+                
+                <!-- Top Click Text -->
+                <p class="animate-subtle-pulse text-green-400 font-bold tracking-[0.2em] text-sm md:text-base mb-4 flex items-center justify-center gap-2">
+                    <span>▼</span> CLICK HERE FOR ANSWERS <span>▼</span>
+                </p>
+
+                <!-- Center Highlighted Box -->
+                <div class="bg-slate-900/60 border border-blue-500/30 rounded-xl py-8 px-4 my-2 group-hover:bg-slate-800/80 transition-colors">
+                    <h2 class="text-2xl md:text-4xl font-bold text-white leading-tight">
+                        TELENOR QUIZ <br />
+                        <span class="text-cyan-400 drop-shadow-lg">ANSWERS HERE</span>
+                    </h2>
+                </div>
+
+                <!-- Bottom Click Text -->
+                <p class="animate-subtle-pulse text-green-400 font-bold tracking-[0.2em] text-sm md:text-base mt-4 flex items-center justify-center gap-2">
+                    <span>▲</span> CLICK HERE FOR ANSWERS <span>▲</span>
+                </p>
+
+                <!-- Hand Icon / Button Visual -->
+                <div class="mt-6">
+                    <span class="inline-flex items-center justify-center px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full font-semibold text-sm shadow-lg group-hover:shadow-cyan-500/50 transition-all">
+                        Open Website ➜
+                    </span>
+                </div>
+            </div>
+        </a>
+
+        <!-- DEVELOPER CREDIT -->
+        <div class="mt-8 text-center z-10">
+            <p class="text-gray-400 text-sm tracking-widest uppercase mb-1">Developed By</p>
+            <h3 class="text-xl md:text-2xl font-bold text-white font-[Orbitron] tracking-wide">FAIZAN</h3>
+        </div>
+
+    </main>
+
+    <!-- FOOTER DISCLAIMER -->
+    <footer class="w-full text-center py-4 px-4 z-10 opacity-60">
+        <p class="text-[10px] md:text-xs text-gray-400 uppercase tracking-wide border-t border-gray-800 pt-4 max-w-lg mx-auto">
+            This website only made for educational purposes only.
+        </p>
+    </footer>
+
+</body>
+</html>
+
+
+              
